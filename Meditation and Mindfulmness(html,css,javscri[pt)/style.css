@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+body{
+  height:100vh;
+  background-image:url(img/homebg.jpg);
+  overflow: auto;
+}
+
+.navbar{
+  height:100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar a, .navlinks{
+  width:50%;
+}
+.navbar a{
+  width:fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left:20px;
+  text-decoration: none;
+  color:black;
+}
+.navbar a img{
+  height:50px;
+  width:50px;
+  border-radius: 50%;
+}
+.navlinks{
+  justify-content: right;
+  margin-right:20px;
+}
+
+/* Hero */
+
+.hero{
+  height:calc(100vh - 200px);
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.btn-primary {
+  background-color: #6FA8DC !important; /* Lighter shade of Bootstrap blue */
+  border-color: #6FA8DC !important;
+}
+
+
+/* Footer */
+.footer {
+  height:100px;
+  width:100%;
+  background: #4E2A2A; /* Dark brown */
+  color: white;
+  /* padding: 20px 40px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer div {
+  margin: 0 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+.social{
+  width:fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+}
+.contact{
+  line-height: 5px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column;
+      text-align: center;
+  }
+}
