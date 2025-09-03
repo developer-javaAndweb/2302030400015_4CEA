@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="index.css">
+<!-- <script src="index.js"></script> -->
+
+ <body>
+    <div class="container">
+        <div class="form-section">
+            <div id="login-screen">
+                <h2>Login</h2>
+                <P>Login to access your account</P>
+                <input id="login-email" placeholder="Email">
+                <input id="login-Password" placeholder="Password">
+                <button onclick="showScreen('home')">Login</button>
+                <div class="link">
+                    <a onclick="showScreen('forgot-screen')">Forgot Password ?</a>
+                </div>
+                <div class="link">
+                    Don't have an account ? <a onclick="showScreen('signup-screen')">Sign Up</a>
+                </div>
+                <div class="social-buttons">
+                    <button><i class="fab fa-facebook"></i>Facebook</button>
+                    <button><i class="fab fa-google"></i>Google</button>
+                    <button><i class="fab fa-apple"></i>Apple</button>
+                </div>
+            </div> 
+
+            <!-- sign up    -->
+            <div id="signup-screen" class="hidden">
+                <h2>Sign Up</h2>
+                <p>Create a new account</p>
+                <input id="sign-first-name" placeholder="First Name">
+                <input id="sign-last-name" type="text" placeholder="Last Name">
+                <input id="sign-email" type="Email" placeholder="Email">
+                <input id="sign-number" type="number" placeholder="Phone Number">
+                <input id="sign-password" placeholder="Password">
+                <input id="sign-confirm-password" type="confirm-password" placeholder="Confirm-Password">
+                <button onclick="showScreen('login-screen')">Create Account</button>
+                <div class="link">
+                    Already have an account ? <a onclick="showScreen('login-screen')">Login</a>
+                </div>
+                <div class="social-button">
+                    <button><i class="fab fa-facebook"></i>Facebook</button>
+                    <button><i class="fab fa-google"></i>Google</button>
+                    <button><i class="fab fa-apple"></i>Apple</button>
+                </div>
+            </div> 
+
+            <!-- forgot password -->
+
+             <div id="forgot-screen" class="hidden">
+                <h2>Forgot Password</h2>
+                <p>Enter your email to reset your Password</p>
+                <input id="forgot-email" type="email" placeholder="Email">
+                <button onclick="showScreen('verify-screen')">Submit</button>
+                <div class="link"><a onclick="showScreen('login-screen')">Back to Login</a></div>
+            </div> 
+
+            <!-- verify code -->
+
+             <div id="verify-screen" class="hidden">
+                <h2>Set a Password</h2>
+                <p>Your previous password has been reset. Set a new one below.</p>
+                <input id="verify-password" placeholder="Password">
+                <input id="verify-confirm-password" type="confirm-password" placeholder="Confirm-Password">
+                <button onclick="showScreen('login-screen')">Set Password</button>
+            </div> 
+
+            <!-- home -->
+
+             <div id="home" class="hidden">
+                <h2>Welcome 🎉🎉</h2>
+                <p>You are loggeed in!</p>
+                <button onclick="showScreen('login-screen')">LogOut</button>
+
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img id="illustration" src="images/295128.png" alt="Illustration">
+        </div>
+    </div>
+
+    <script>
+        function showScreen(screenId) { 
+         document.querySelectorAll('.form-section > div').forEach(div => div.classList.add('hidden'));
+
+            document.getElementById(screenId).classList.remove('hidden');
+
+            let img = document.getElementById("illustration");
+            switch (screenId) {
+                case 'login-scrren':
+
+                    img.src = "https://cdn-icons-png.flaticon.com/512/2910/2910768.png";
+                    break; 
+
+                 case 'signup-screen':
+
+                    img.src = "https://cdn-icons-png.flaticon.com/512/5087/5087579.png";
+                    break;
+
+                case 'forgot-screen':
+
+                    img.src = "https://cdn-icons-png.flaticon.com/512/3064/3064197.png";
+                    break;
+
+                case 'verify-screen':
+
+                    img.src = "https://cdn-icons-png.flaticon.com/512/747/747376.png";
+                    break;
+
+                case 'reset-screen':
+
+                    img.src = "https://cdn-icons-png.flaticon.com/512/3064/3064197.png";
+                    break;
+
+                case 'home':
+
+                    img.src = "https://cdn-icons-png.flaticon.com/512/561/561127.png";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
